@@ -50,4 +50,13 @@ router.delete('/:id', auth, (req, res) => {
     .catch(err => res.status(404).json({ success: false }));
 });
 
+// @route   DELETE api/items/:id
+// @desc    Delete A Item
+// @access  Private
+router.put('/:id', auth, (req, res) => {
+  Item.findById(req.params.id)
+    .then(item => item.append().then(() => res.json({ success: true }))))
+    .catch(err => res.status(404).json({ success: false }));
+});
+
 module.exports = router;
