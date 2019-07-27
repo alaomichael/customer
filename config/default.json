@@ -1,4 +1,7 @@
 {
-  "mongoURI": "mongodb://localhost/my_customer_data",
+  "mongoURI": "mongodb+srv: //contactleomax@gmail.com:babatunde2@awsusacluster-1qgt4.mongodb.net/test?retryWrites=true&w=majority",
   "jwtSecret": "sl_myJwtSecret"
 }
+
+// The URL for my local database 
+// "mongoURI": "mongodb://localhost/my_customer_data"
