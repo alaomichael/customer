@@ -22,7 +22,7 @@ class App extends Component {
                     <Container>
                         <ItemModal />
                         <CustomerList />
-                        <ProductItem />
+                        
                     </Container>
                 </div>
             </Provider>      
