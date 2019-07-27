@@ -5,7 +5,9 @@ class ProductItem extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            isEdit: false
+            isEdit: false,
+            name: '',
+            bust: ''
         };
 
         this.onDelete = this.onDelete.bind(this);
@@ -24,7 +26,7 @@ class ProductItem extends Component {
 
     onEditSubmit(event) {
         event.preventDefault();
-        this.props.onEditSubmit(this.nameInput.value, this.bustInput.value, this.props.name);
+        this.state.onEditSubmit(this.nameInput.value, this.bustInput.value, this.props.name);
 
         this.setState({ isEdit: false });
     }

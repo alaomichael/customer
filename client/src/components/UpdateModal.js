@@ -51,7 +51,7 @@ class UpdateModal extends Component {
     onSubmit = e => {
         e.preventDefault();
 
-        const newItem = {
+        const newItem =  {
             name: this.state.name,
             phone: this.state.phone,
             email: this.state.email,

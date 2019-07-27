@@ -47,8 +47,7 @@ export const deleteItem = id => (dispatch, getState) => {
 };
 
 export const updateItem = id => (dispatch, getState) => {
-  axios
-    .put(`/api/items/${id}`, tokenConfig(getState))
+  axios.put(`/api/items/${id}`, tokenConfig(getState))
     .then(res =>
       dispatch({
         type: EDIT_ITEM,

@@ -24,6 +24,11 @@ export default function(state = initialState, action) {
         ...state,
         items: state.items.filter(item => item._id !== action.payload)
       };
+    case EDIT_ITEM:
+      return {
+        ...state,
+        items: [action.payload, ...state.items]
+      };
     case ADD_ITEM:
       return {
         ...state,

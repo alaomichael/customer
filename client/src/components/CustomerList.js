@@ -23,7 +23,7 @@ class CustomerList extends Component {
 
   onEditClick = id => {
     this.props.updateItem(id);
-  };
+     };
 
   render() {
     const { items } = this.props.item;
@@ -44,20 +44,19 @@ class CustomerList extends Component {
                     >
                       &times;
                     </Button>
-                      <Button
-                        className='btn-primary'
-                        color='blue'
-                        size='sm'
-                        onClick={ this.onEditClick.bind(this, _id) }
-                      >
-                       Edit
-                       </Button>
-                      <UpdateModal />
+                                         
                   </>
                   ) : null}
                   { ` Name: ` }{ name }{ ` | Phone: 0` }{ phone }{ ` | E-mail: ` }{ email }<br />{ ` Bust: ` }{ bust }{ `cm | ` }{ ` Underbust: ` }{ underbust }{ `cm | ` }
                   { ` Nip to Nip: ` }{ nip }{ `cm | ` }{ ` Waist: ` }{ waist }{ `cm | ` }{ ` Hip: ` }{ hip }{ `cm | ` }{ ` Length: ` }{ length }{ `cm | ` }{ ` Shoulder to Knee: ` }{ stk }{ `cm` }<br />{ ` Shoulder: ` }{ shoulder }{ `cm | ` }{ ` Sleeve: ` }{ sleeve }{ `cm | ` }{ ` Round Sleeve: ` }{ round_sleeve }{ `cm | ` }{ ` Gown Length: ` }{ gown_length }{ `cm | ` }{ ` Skirt Length: ` }{ skirt_length }{ `cm | ` }{ ` Blouse Length: ` }{ blouse_length }{ `cm | ` }{ ` Skirt Waist: ` }{ skirt_waist }{ `cm` }
-                </ListGroupItem>
+                  <UpdateModal
+                    className='btn-primary'
+                    color='blue'
+                    size='sm'
+
+                    onClick={ this.onEditClick.bind(this, _id) }
+                  />
+                  </ListGroupItem>
               </CSSTransition>
             ))}
           </TransitionGroup>
