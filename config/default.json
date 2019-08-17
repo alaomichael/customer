@@ -1,4 +1,4 @@
-{ "mongoURI": "mongodb+srv://michael:babatunde2@awsusacluster-1qgt4.mongodb.net/customer_details?retryWrites=true&w=majority", // online mongodb database
+{ "mongoURI": "mongodb+srv://michael:babatunde2@awsusacluster-1qgt4.mongodb.net/customer_details?retryWrites=true&w=majority", 
   "jwtSecret": "sl_myJwtSecret"
 }
 
