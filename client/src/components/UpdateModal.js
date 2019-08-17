@@ -10,13 +10,23 @@ import {
     Input
 } from 'reactstrap';
 import { connect } from 'react-redux';
-import { updateItem } from '../actions/itemActions';
+import { getItems, updateItem } from '../actions/itemActions';
 import PropTypes from 'prop-types';
 
 class UpdateModal extends Component {
+
+    static propTypes = {
+        getItems: PropTypes.func.isRequired,
+        item: PropTypes.object.isRequired,
+        isAuthenticated: PropTypes.bool
+    };
+
+    componentDidMount() {
+        this.props.getItems();
+    }
     state = {
         modal: false,
-        name: '',
+        name: this.props.name,
         phone: '',
         underbust: '',
         hip: '',
@@ -38,6 +48,7 @@ class UpdateModal extends Component {
         isAuthenticated: PropTypes.bool
     };
 
+   
     toggle = () => {
         this.setState({
             modal: !this.state.modal
@@ -79,6 +90,7 @@ class UpdateModal extends Component {
     };
 
     render() {
+        const { items } = this.props.item;
         return (
             <div>
                 { this.props.isAuthenticated ? (
@@ -103,7 +115,7 @@ class UpdateModal extends Component {
                                     type='text'
                                     name='name'
                                     id='item'
-                                    placeholder='Add Customer Name'
+                                   value={items.name}
                                     onChange={ this.onChange }
                                 />
 
@@ -255,6 +267,6 @@ const mapStateToProps = state => ({
 
 export default connect(
     mapStateToProps,
-    { updateItem }
+    { getItems, updateItem }
 )(UpdateModal);
 

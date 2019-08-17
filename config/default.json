@@ -1,7 +1,8 @@
-{
-  "mongoURI": "mongodb+srv://michael:babatunde2@awsusacluster-1qgt4.mongodb.net/customer_details?retryWrites=true&w=majority",
+{ "mongoURI": "mongodb+srv://michael:babatunde2@awsusacluster-1qgt4.mongodb.net/customer_details?retryWrites=true&w=majority", // online mongodb database
   "jwtSecret": "sl_myJwtSecret"
 }
+
+// "mongoURI": "mongodb://localhost/my_customer_data", // offline database
 
 // The URL for my local database 
 // "mongoURI": "mongodb://localhost/my_customer_data"

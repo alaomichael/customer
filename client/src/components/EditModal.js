@@ -21,9 +21,10 @@ export default class EditTodo extends Component {
     }
 
     componentDidMount() {
-        axios.get('http://localhost:4000/todos/' + this.props.match.params.id)
+        axios.get('http://localhost:5000/api/items' )
             .then(response => {
                 this.setState({
+                    bust: response.data.bust,
                     todo_description: response.data.todo_description,
                     todo_responsible: response.data.todo_responsible,
                     todo_priority: response.data.todo_priority,
@@ -35,6 +36,12 @@ export default class EditTodo extends Component {
             })
     }
 
+
+    onChangeTodoBust(e) {
+        this.setState({
+            bust: e.target.value
+        });
+    }
     onChangeTodoDescription(e) {
         this.setState({
             todo_description: e.target.value
@@ -62,12 +69,13 @@ export default class EditTodo extends Component {
     onSubmit(e) {
         e.preventDefault();
         const obj = {
+            bust : this.state.bust,
             todo_description: this.state.todo_description,
             todo_responsible: this.state.todo_responsible,
             todo_priority: this.state.todo_priority,
             todo_completed: this.state.todo_completed
         };
-        axios.post('http://localhost:4000/todos/update/' + this.props.match.params.id, obj)
+        axios.post('http://localhost:5000/api/items/update/', obj)
             .then(res => console.log(res.data));
 
         this.props.history.push('/');
@@ -86,6 +94,15 @@ export default class EditTodo extends Component {
                             onChange={ this.onChangeTodoDescription }
                         />
                     </div>
+                    <div className="form-group">
+                        <label>Bust: </label>
+                        <input type="text"
+                            className="form-control"
+                            value={ this.state.bust }
+                            onChange={ this.onChangeTodoBust }
+                        />
+                    </div>
+
                     <div className="form-group">
                         <label>Responsible: </label>
                         <input type="text"

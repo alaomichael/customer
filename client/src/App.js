@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 import AppNavbar from './components/AppNavbar';
 import CustomerList from './components/CustomerList';
+import CustomerLists from './components/CustomerLists';
 import ItemModal from './components/ItemModal';
 import ProductItem from './components/ProductItem';
 import AddProduct from './AddProduct';
+import EditTodo from './components/EditModal'
 import { Container } from 'reactstrap';
 
 import { Provider } from 'react-redux';
@@ -22,8 +24,8 @@ class App extends Component {
                     <Container>
                         <ItemModal />
                         <CustomerList />
-                        
-                    </Container>
+                        <CustomerLists />
+                       </Container>
                 </div>
             </Provider>      
         );
